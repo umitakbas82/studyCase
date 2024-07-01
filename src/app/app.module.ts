@@ -10,12 +10,14 @@ import {  ButtonModule } from 'primeng/button';
 import { CartComponent } from './cart/cart.component';
 import { MenubarModule } from 'primeng/menubar';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductPageComponent,
-    CartComponent
+    CartComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,

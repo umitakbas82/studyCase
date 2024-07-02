@@ -1,21 +1,30 @@
 <div class="container ml-3">
-    <div class="card flex justify-content-center">
-        <p-card header="Advanced Card" subheader="Card Subheader" [style]="{ width: '360px' }">
-            <ng-template pTemplate="header">
-                <img alt="Card" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
-            </ng-template>
-            <div class="container">
-              <p>
-              
-            </p>   
-            </div>
-           
-            <ng-template pTemplate="footer">
-                <div class="flex gap-3 mt-1">
-                   
-                    <p-button label="Sepete Ekle" class="w-full" styleClass="w-full" [raised]="true" />
+    <div class="row">
+        <div class="col-sm-9">
+            @for (item of products; track item.productId) {
+                <div class="card flex justify-content-center">
+                    <p-card  [style]="{ width: '360px' }">
+                        <p>{{item.productName}}</p>
+                        <ng-template pTemplate="header">
+                            <img alt="Card" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
+                        </ng-template>
+                        <div class="container">
+                          <p>
+                          
+                        </p>   
+                        </div>
+                       
+                        <ng-template pTemplate="footer">
+                            <div class="flex gap-3 mt-1">
+                               
+                                <p-button label="Sepete Ekle" class="w-full" styleClass="w-full" [raised]="true" />
+                                <p-button label="Favorilerime Ekle" class="w-full" styleClass="w-full" [raised]="true" />
+                            </div>
+                        </ng-template>
+                    </p-card>
                 </div>
-            </ng-template>
-        </p-card>
-    </div>
+            }
+        </div>
+
+</div>
 </div>

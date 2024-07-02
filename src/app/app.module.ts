@@ -11,13 +11,18 @@ import { CartComponent } from './cart/cart.component';
 import { MenubarModule } from 'primeng/menubar';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { MenubarComponent } from './menubar/menubar.component';
+import { DialogModule } from 'primeng/dialog';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductPageComponent,
     CartComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    MenubarComponent,
+    FavoritesComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +30,9 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     HttpClientModule,
     CardModule,
     ButtonModule,
-    MenubarModule
+    MenubarModule,
+    DialogModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

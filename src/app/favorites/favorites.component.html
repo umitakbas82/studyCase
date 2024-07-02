@@ -1,5 +1,5 @@
 <div *ngIf="items.length === 0">
-    <p>Sepetiniz boş.</p>
+    <p>Favorileriniz boş.</p>
   </div>
   
   <div *ngIf="items.length > 0">
@@ -7,24 +7,19 @@
       <thead>
         <tr>
           <th>Ürün</th>
-          <th>Adet</th>
           <th>Fiyat</th>
-          <th>Toplam</th>
           <th>İşlemler</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let item of items">
           <td>{{ item.productName }}</td>
-          <td>{{ item.quantity }}</td>
           <td>{{ item.price | currency }}</td>
-          <td>{{ item.price * item.quantity | currency }}</td>
-          <td><button (click)="removeFromCart(item.productId)">Kaldır</button></td>
+          <td><button (click)="removeFromList(item.productId)">Kaldır</button></td>
         </tr>
       </tbody>
     </table>
   
-    <p>Toplam: {{ total | currency }}</p>
-    <button (click)="clearCart()">Sepeti Temizle</button>
+    <button (click)="clearList()">Favorileri Temizle</button>
   </div>
   

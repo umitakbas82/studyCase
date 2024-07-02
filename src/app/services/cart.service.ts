@@ -25,11 +25,11 @@ export class CartService {
     return this.items.reduce((total, item) => total + item.price * item.quantity, 0);
   }
 
-  removeFromCart(productId: number) {
+  removeFromCart(productId: number): void {
     this.items = this.items.filter(item => item.productId !== productId);
   }
 
-  clearCart(){
+  clearCart(): void {
     this.items = [];
   }
 }

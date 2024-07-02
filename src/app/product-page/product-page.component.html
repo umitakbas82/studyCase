@@ -14,14 +14,15 @@
                           
                         </p>   
                         </div>
-                       
+                        <button  pButton   pRipple   label="İncele" class="p-button-primary" [outlined]="true"  [raised]="true" style="margin-right: 4px;" (click)="viewProductDetails(products)">
+                        </button>
                         <ng-template pTemplate="footer">
                             <div class="flex gap-3 mt-1">
                                
-                                <p-button label="Sepete Ekle"  [text]="true" [raised]="true" />
-                                <!-- <p-button label="Favorilerime Ekle" [text]="true" [raised]="true" severity="help"  /> -->
+                                <button  pButton   pRipple   label="Sepete Ekle" class="p-button-success" [outlined]="true"  [raised]="true" style="margin-right: 4px;">
+                                </button>
                                
-                                    <button  pButton   pRipple   label="Favorilere Ekle" class="p-button-help" >
+                                    <button  pButton   pRipple   label="Favorilere Ekle" class="p-button-help" [outlined]="true" [raised]="true" >
                                     </button>
                                
                             

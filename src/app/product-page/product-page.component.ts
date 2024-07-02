@@ -4,7 +4,7 @@ import { productModelDTO } from '../models/productModelDTO';
 import { CartService } from '../services/cart.service';
 import { CartItem } from '../models/cartModelDto';
 import { FavoritesService } from '../services/favorites.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -15,11 +15,12 @@ import { ActivatedRoute } from '@angular/router';
 export class ProductPageComponent {
   products: productModelDTO[] = [];
   items:CartItem[]=[]
-  constructor(private service:DataService,private cartService:CartService,private wishlistService: FavoritesService, private route: ActivatedRoute,){}
+  constructor(private service:DataService,private cartService:CartService,private wishlistService: FavoritesService, private router: Router,){}
  
  
-  ngOnInit(): void{   
-
+  ngOnInit(): void{      
+    
+    
     this.getItems();
   }
 
@@ -47,6 +48,10 @@ export class ProductPageComponent {
     }
   }
 
+
+  viewProductDetails(productId: number): void {
+    this.router.navigate(['/products', productId]);
+  }
   // addToCart(product: productModelDTO): void {
   //   if (product) {
   //     const cartItem = {

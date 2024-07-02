@@ -4,7 +4,9 @@
                 <div class="card flex justify-content-center">
                     <p-card  [style]="{ width: '360px' }">
                         <p>{{item.productName}}</p>
+                        <p>{{item.productDescription}}</p>
                         <ng-template pTemplate="header">
+                           
                             <img alt="Card" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
                         </ng-template>
                         <div class="container">
@@ -17,7 +19,13 @@
                             <div class="flex gap-3 mt-1">
                                
                                 <p-button label="Sepete Ekle"  [text]="true" [raised]="true" />
-                                <p-button label="Favorilerime Ekle" [text]="true" [raised]="true" severity="help" />
+                                <!-- <p-button label="Favorilerime Ekle" [text]="true" [raised]="true" severity="help"  /> -->
+                               
+                                    <button  pButton   pRipple   label="Favorilere Ekle" class="p-button-help" >
+                                    </button>
+                               
+                            
+                                
                             </div>
                         </ng-template>
                     </p-card>
@@ -29,20 +37,5 @@
 </div>
 
 
-<p-dialog header="Edit Profile" [(visible)]="visible" [style]="{ width: '25rem' }">
-    <span class="p-text-secondary block mb-5">Update your information.</span>
-    <div class="flex align-items-center gap-3 mb-3">
-        <label for="username" class="font-semibold w-6rem">Username</label>
-        <input pInputText id="username" class="flex-auto" autocomplete="off" />
-    </div>
-    <div class="flex align-items-center gap-3 mb-5">
-        <label for="email" class="font-semibold w-6rem">Email</label>
-        <input pInputText id="email" class="flex-auto" autocomplete="off" />
-    </div>
-    <div class="flex justify-content-end gap-2">
-        <p-button label="Cancel" severity="secondary" (click)="visible = false" />
-        <p-button label="Save" (click)="visible = false" />
-    </div>
-</p-dialog>
 
 

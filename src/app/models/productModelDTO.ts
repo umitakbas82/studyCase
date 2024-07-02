@@ -4,6 +4,6 @@ export class productModelDTO{
     productPrice:Number=0;
     productDescription:string="";
     productImage=[];
- 
+
    
 }

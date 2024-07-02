@@ -23,12 +23,7 @@ export class ProductPageComponent {
     this.getItems();
   }
 
-  addFavorites(){   
-    this.service.getProduct(productId).subscribe(product => {
-      this.products = product;
 
-  }
- 
 
   getItems(){
     this.service.getProducts().subscribe((resp:any)=>{
@@ -37,6 +32,20 @@ export class ProductPageComponent {
     })
   }
   
+  wishlistItem!:any;
+  addToWishlist(product: productModelDTO) {
+    if (product) {
+       this.wishlistItem = {
+        productId: product.productId,
+        productName: product.productName,
+        price: product.productPrice
+      };
+      this.wishlistService.addToWishlist(this.wishlistItem);
+      alert(`${product.productName} favorilere eklendi!`);
+
+      console.log("butona basıldı")
+    }
+  }
 
   // addToCart(product: productModelDTO): void {
   //   if (product) {

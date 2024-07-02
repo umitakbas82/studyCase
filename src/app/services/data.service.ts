@@ -20,4 +20,6 @@ export class DataService {
   getProduct(id: number): Observable<productModelDTO> {
     return this.http.get<productModelDTO>(`${this.apiUrl}/${id}`);
   }
+
+ 
 }

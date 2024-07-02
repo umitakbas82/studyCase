@@ -17,12 +17,10 @@ export class ProductDetailsComponent {
     
   ) { }
 
+  productId:any
   ngOnInit(): void {
    
-    const productId = Number(this.route.snapshot.paramMap.get('id'));
-    this.productService.getProduct(productId).subscribe(product => {
-      this.products = product;
-    });
+   
       
     
   }

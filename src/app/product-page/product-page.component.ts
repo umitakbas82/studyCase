@@ -5,6 +5,7 @@ import { CartService } from '../services/cart.service';
 import { CartItem } from '../models/cartModelDto';
 import { FavoritesService } from '../services/favorites.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -49,7 +50,7 @@ export class ProductPageComponent {
   }
 
 
-  viewProductDetails(productId: number): void {
+  viewProductDetails(productId: number){
     this.router.navigate(['/products', productId]);
   }
   // addToCart(product: productModelDTO): void {
@@ -63,7 +64,13 @@ export class ProductPageComponent {
   //     this.cartService.addToCart(cartItem);
   //     alert(`${product.name} sepete eklendi!`);
   //   }
-  // }
+  //}
+
+  product!:any
+  getProduct(id: number) {
+   this.product = this.products.find(p => p.productId === this.product);
+   
+  }
   visible: boolean = false;
 
     showDialog() {

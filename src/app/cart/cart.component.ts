@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CartService } from '../services/cart.service';
 import { CartItem } from '../models/cartModelDto';
+import { SepetModel } from '../models/SepetMode';
 
 @Component({
   selector: 'app-cart',
@@ -29,5 +30,17 @@ export class CartComponent {
     this.cartService.clearCart();
     this.items = [];
     this.total = 0;
+  }
+
+  sepetOlustur()
+  {
+    let carttempList:CartItem[] =[];
+    let sspModel:SepetModel = { sepetId:this.cartService.generateRandomString(10), productsList:carttempList}
+    // let spModel ={
+    //   sepetId:"blabla",
+    //   productsList:CartItem[]
+    // }
+    this.cartService.sepetYarat(sspModel);
+    
   }
 }

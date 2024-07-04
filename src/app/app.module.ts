@@ -14,6 +14,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { MenubarComponent } from './menubar/menubar.component';
 import { DialogModule } from 'primeng/dialog';
 import { FavoritesComponent } from './favorites/favorites.component';
+import { TableModule } from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { FavoritesComponent } from './favorites/favorites.component';
     ButtonModule,
     MenubarModule,
     DialogModule,
+    TableModule
     
   ],
   providers: [],

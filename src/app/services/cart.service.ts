@@ -95,7 +95,14 @@ export class CartService {
   }
 
   getTotal(): number {
-    return this.items.reduce((total, item) => total + item.price * item.quantity, 0);
+    let total = this.items.reduce((total, item) => total += item.price * item.quantity, 0);
+    const kdv = total * 0.20; // %20 KDV
+    total += kdv;
+
+    const kargoUcreti = total < 1000 ? 40 : 0; // Toplam 1000 TL'nin altında ise 40 TL kargo ücreti
+    total += kargoUcreti;
+
+    return total;
   }
 
   removeFromCart(productId: number): void {

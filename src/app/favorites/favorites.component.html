@@ -1,30 +1,45 @@
 <div *ngIf="items.length === 0">
     <p>Favorileriniz boş.</p>
+    <button  pButton   pRipple   label=" Tümünü Kaldır" class="p-button-primary" [outlined]="true"  [raised]="true" style="margin-right: 4px;" (click)="clearList()" ></button>
+    <button  pButton   pRipple   label=" Tümünü Kaldır" class="p-button-primary" [outlined]="true"  [raised]="true" style="margin-right: 4px;" (click)="sepetOlustur(items.createdId)" ></button>
+
   </div>
   
-  <div *ngIf="items.length > 0">
-    <table>
-      <thead>
+  <p-table [value]="items" [tableStyle]="{'min-width': '60rem'}">
+    <ng-template pTemplate="caption">
+        <div class="flex align-items-center justify-content-between">
+            Products
+            <p-button icon="pi pi-refresh" />
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header">
         <tr>
-          <th>Ürün</th>
-          <th>Fiyat</th>
-          <th>İşlemler</th>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Price</th>
+            
         </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of items">
-          <td>{{ item.productName }}</td>
-          <td>{{ item.price | currency }}</td>
-          <td>{{ item.pro }}</td>
-          <td><button (click)="removeFromList(item.productId)">Kaldır</button></td>
-          <button  pButton   pRipple   label="Sepete Ekle" class="p-button-success" [outlined]="true"  [raised]="true" style="margin-right: 4px;"   
-          ></button>
+    </ng-template>
+    <ng-template pTemplate="body" let-product>
+        <tr>
+            <td>{{product.name}}</td>
+            
+            <td>{{product.price}}</td>                 
+            
+            <td><button  pButton   pRipple   label="Kaldır" class="p-button-primary" [outlined]="true"  [raised]="true" style="margin-right: 4px;" (click)="removeFromList(items.productId)" ></button></td>
+            <td><button  pButton   pRipple   label="Sepete EKle" class="p-button-primary" [outlined]="true"  [raised]="true" style="margin-right: 4px;" (click)="addToCart(items.productId)" ></button></td>
+            
+            
         </tr>
-      </tbody>
-      
-    </table>
+    </ng-template>
+    <ng-template pTemplate="summary">
+        <div class="flex align-items-center justify-content-between">
+            In total there are {{items ? items.length : 0 }} products.
+        </div>
+    </ng-template>
+</p-table>
   
     <button (click)="clearList()">Favorileri Temizle</button>
     
-  </div>
+
   

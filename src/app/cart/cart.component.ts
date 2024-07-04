@@ -13,11 +13,18 @@ export class CartComponent {
 
   items: CartItem[] = [];
   total: number = 0;
+  sepetitem:SepetModel[]=[]
+productsList: any;
 
   constructor(private cartService: CartService) { }
   ngOnInit(): void {
     this.items = this.cartService.getItems();
     this.total = this.cartService.getTotal();
+    this.sepetitem=this.cartService.sepetleriGetir()
+    console.log("gelen sepet item",this.sepetitem)
+    console.log("gelmesi gereken",this.items)
+    this.getproducts(this.productitem);
+    
   }
 
   removeFromCart(productId: number): void {
@@ -27,12 +34,18 @@ export class CartComponent {
   }
 
   clearCart(): void {
+
     this.cartService.clearCart();
     this.items = [];
     this.total = 0;
+    console.log("butona basıldı")
   }
 
-  sepetOlustur()
+  // sepetgelen(){
+  //   this.
+  // }
+
+sepetOlustur()
   {
     let carttempList:CartItem[] =[];
     let sspModel:SepetModel = { sepetId:this.cartService.generateRandomString(10), productsList:carttempList}
@@ -43,4 +56,11 @@ export class CartComponent {
     this.cartService.sepetYarat(sspModel);
     
   }
+
+  productitem:any;
+ getproducts(id:any){
+  this.productitem=this.productsList.filter((p: { id: any; }) => p.id === id)
+
+  console.log("Productlist geldi")
+ }
 }

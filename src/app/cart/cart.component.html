@@ -1,30 +1,15 @@
-<div *ngIf="items.length === 0">
-    <p>Sepetiniz boş.</p>
-  </div>
-  
-  <div *ngIf="items.length > 0">
-    <table>
-      <thead>
-        <tr>
-          <th>Ürün</th>
-          <th>Adet</th>
-          <th>Fiyat</th>
-          <th>Toplam</th>
-          <th>İşlemler</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of items">
-          <td>{{ item.productName }}</td>
-          <td>{{ item.quantity }}</td>
-          <td>{{ item.price | currency }}</td>
-          <td>{{ item.price * item.quantity | currency }}</td>
-          <td><button (click)="removeFromCart(item.productId)">Kaldır</button></td>
-        </tr>
-      </tbody>
-    </table>
-  
-    <p>Toplam: {{ total | currency }}</p>
+<div class="cart">
+    <h2>Sepetiniz</h2>
+    <ul>
+      <li *ngFor="let item of productsList">
+        {{ item.productName }}  TL
+        <!-- <button (click)="removeFromCart(item.productId)">Kaldır</button> -->
+      </li>
+    </ul>
+    <div class="total">
+      Toplam: {{ total }} TL
+    </div>
     <button (click)="clearCart()">Sepeti Temizle</button>
+    <button (click)="sepetOlustur()">Sepet Oluştur</button>
   </div>
   

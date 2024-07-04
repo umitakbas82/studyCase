@@ -53,7 +53,9 @@ export class ProductPageComponent {
 
 
   viewProductDetails(productId: string){
+    
     this.router.navigate(['/products', productId]);
+    console.log(productId)
   }
   addToCart(product: productModelDTO): void {
     var sepetler = this.cartService.sepetleriGetir();

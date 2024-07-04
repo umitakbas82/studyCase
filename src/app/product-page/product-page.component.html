@@ -4,7 +4,7 @@
                 <div class="card flex justify-content-center">
                     <p-card  [style]="{ width: '360px' }">
                         <p>{{item.productName}}</p>
-                        <p>{{item.productDescription}}</p>
+                        <p>{{item.productDescription.description}}</p>
                         <ng-template pTemplate="header">
                            
                             <img alt="Card" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
@@ -14,15 +14,15 @@
                           
                         </p>   
                         </div>
-                        <button  pButton   pRipple   label="İncele" class="p-button-primary" [outlined]="true"  [raised]="true" style="margin-right: 4px;" (click)="viewProductDetails(product.id)">
+                        <button  pButton   pRipple   label="İncele" class="p-button-primary" [outlined]="true"  [raised]="true" style="margin-right: 4px;" (click)="viewProductDetails(item.productId)">
                         </button>
                         <ng-template pTemplate="footer">
                             <div class="flex gap-3 mt-1">
                                
-                                <button  pButton   pRipple   label="Sepete Ekle" class="p-button-success" [outlined]="true"  [raised]="true" style="margin-right: 4px;">
+                                <button  pButton   pRipple   label="Sepete Ekle" class="p-button-success" [outlined]="true"  [raised]="true" style="margin-right: 4px;"   (click)="addToCart(item)">
                                 </button>
                                
-                                    <button  pButton   pRipple   label="Favorilere Ekle" class="p-button-help" [outlined]="true" [raised]="true" >
+                                    <button  pButton   pRipple   label="Favorilere Ekle" class="p-button-help" [outlined]="true" [raised]="true"  (click)="addToWishlist(item)"  >
                                     </button>
                                
                             

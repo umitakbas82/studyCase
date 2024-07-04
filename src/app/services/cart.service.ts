@@ -6,6 +6,7 @@ import { SepetModel } from '../models/SepetMode';
   providedIn: 'root'
 })
 export class CartService {
+  
   private items: CartItem[] = [];
   private sepetler :SepetModel[]=[];
   constructor() { }
@@ -27,7 +28,7 @@ export class CartService {
       localStorage.setItem(sepetId,JSON.stringify(this.sepetler));
       
   }
-  
+
 
   sepetYarat(sepo :SepetModel)
   {

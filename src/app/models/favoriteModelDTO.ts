@@ -1,5 +1,7 @@
 export interface favoriteItem {
-    productId: number;
-    productName: string;
-    price: number;
+    productId:string,
+    productName:string;
+    productPrice:Number;
+    productDescription: any;
+    
   }

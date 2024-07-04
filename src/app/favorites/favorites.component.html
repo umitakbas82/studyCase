@@ -15,11 +15,16 @@
         <tr *ngFor="let item of items">
           <td>{{ item.productName }}</td>
           <td>{{ item.price | currency }}</td>
+          <td>{{ item.pro }}</td>
           <td><button (click)="removeFromList(item.productId)">Kaldır</button></td>
+          <button  pButton   pRipple   label="Sepete Ekle" class="p-button-success" [outlined]="true"  [raised]="true" style="margin-right: 4px;"   
+          ></button>
         </tr>
       </tbody>
+      
     </table>
   
     <button (click)="clearList()">Favorileri Temizle</button>
+    
   </div>
   

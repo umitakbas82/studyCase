@@ -1,14 +1,5 @@
 <div class="cart">
-    <h2>Sepetiniz</h2>
-    <ul>
-      <li *ngFor="let item of productsList">
-        {{ item.productName }}  TL
-        <!-- <button (click)="removeFromCart(item.productId)">Kaldır</button> -->
-      </li>
-    </ul>
-    <div class="total">
-      Toplam: {{ total }} TL
-    </div>
+
     <button (click)="clearCart()">Sepeti Temizle</button>
     <button (click)="sepetOlustur()">Sepet Oluştur</button>
   </div>

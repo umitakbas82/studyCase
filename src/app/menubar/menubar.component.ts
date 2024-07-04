@@ -23,20 +23,7 @@ export class MenubarComponent {
         {
             label: 'Sepetlerim',
             icon: 'pi pi-shopping-cart',
-            items: [
-                {
-                    label: 'Sepet1',
-                    icon: 'pi pi-shopping-cart',
-                    command: () => {
-                      this.router.navigate(['/cart']);
-                },
-              },
-                {
-                    label: 'Sepet2',
-                    icon: 'pi pi-shopping-cart'
-                },
-                
-            ]
+            routerLink:'/cart'
         },
         {
           label: 'Favorilerim',

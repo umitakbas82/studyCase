@@ -115,4 +115,18 @@ export class CartService {
         }
      return result;
     }
+
+    increaseQuantity(productId: string): void {
+      const item = this.items.find(item => item.productId === productId);
+      if (item) {
+        item.quantity++;
+      }
+    }
+  
+    decreaseQuantity(productId: string): void {
+      const item = this.items.find(item => item.productId === productId);
+      if (item && item.quantity > 1) {
+        item.quantity--;
+      }
+    }
 }

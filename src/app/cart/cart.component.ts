@@ -23,7 +23,7 @@ productsList: any;
     this.sepetitem=this.cartService.sepetleriGetir()
     console.log("gelen sepet item",this.sepetitem)
     console.log("gelmesi gereken",this.items)
-    this.getproducts(this.productitem);
+   
     
   }
 
@@ -41,6 +41,16 @@ productsList: any;
     console.log("butona basıldı")
   }
 
+
+  increaseQuantity(productId: string): void {
+    this.cartService.increaseQuantity(productId);
+    this.total = this.cartService.getTotal();
+  }
+
+  decreaseQuantity(productId: string): void {
+    this.cartService.decreaseQuantity(productId);
+    this.total = this.cartService.getTotal();
+  }
   // sepetgelen(){
   //   this.
   // }
@@ -57,10 +67,8 @@ sepetOlustur()
     
   }
 
-  productitem:any;
- getproducts(id:any){
-  this.productitem=this.productsList.filter((p: { id: any; }) => p.id === id)
 
-  console.log("Productlist geldi")
- }
+  
+ 
 }
+
